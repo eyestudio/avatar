@@ -10,7 +10,8 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg);
@@ -24,12 +25,14 @@ body {
   padding: 2rem;
   text-align: center;
   width: 100%;
+  box-sizing: border-box;
 }
 
 header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   background: linear-gradient(45deg, #646cff, #a564ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -53,6 +56,7 @@ header p {
   font-size: 1.5rem;
   font-weight: 700;
   background: linear-gradient(90deg, #ff00cc, #3333ff);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Courier New', Courier, monospace;
@@ -69,6 +73,7 @@ header p {
   justify-content: center;
   margin-bottom: 1rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .address-input {
@@ -120,5 +125,33 @@ header p {
 
   header p {
     color: #aaa;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .avatar-display {
+    transform: scale(0.8);
+    margin-bottom: 1rem;
+  }
+
+  .avatar-display:hover {
+    transform: scale(0.85);
+  }
+
+  .address-input {
+    width: 100%;
+    max-width: none;
+  }
+
+  .random-btn {
+    width: 100%;
   }
 }

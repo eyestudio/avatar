@@ -12,10 +12,15 @@ Since I cannot access your GitHub account directly to create a repository, here 
     git branch -M main
     git push -u origin main
     ```
-3.  **Enable GitHub Pages**:
+3.  **Important: Make Repository Public** (Required for free GitHub Pages):
+    - Go to **Settings** > **General**.
+    - Scroll down to the **Danger Zone**.
+    - Click **Change repository visibility**.
+    - Select **Make public**.
+4.  **Enable GitHub Pages**:
     - Go to your repository **Settings** > **Pages**.
-    - Under **Build and deployment**, select **GitHub Actions**.
-    - GitHub will automatically detect the Vite project and suggest a workflow, or you can use the `static` branch method if you configure it.
+    - **CRITICAL STEP**: Under **Build and deployment** > **Source**, change the dropdown from "Deploy from a branch" to **"GitHub Actions"**.
+    - GitHub will automatically detect the workflow I created (`.github/workflows/deploy.yml`).
     - *Alternatively*, to deploy the `dist` folder manually:
         - Install `gh-pages`: `npm install gh-pages --save-dev`
         - Add this script to `package.json`: `"deploy": "gh-pages -d dist"`
